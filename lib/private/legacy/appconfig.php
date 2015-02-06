@@ -22,6 +22,13 @@
  * along with this program.  If not, see <http://www.gnu.org/licenses/>
  *
  */
+
+/**
+ * This class provides an easy way for apps to store config values in the
+ * database.
+ *
+ * @deprecated use \OC::$server->getConfig() to get an \OCP\IConfig instance
+ */
 class OC_Appconfig {
 	/**
 	 * @return \OCP\IAppConfig

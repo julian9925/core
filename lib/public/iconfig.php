@@ -83,6 +83,15 @@ interface IConfig {
 	public function setAppValue($appName, $key, $value);
 
 	/**
+	 * Checks if a key is set in the apps config
+	 *
+	 * @param string $appName the appName tto look a key up
+	 * @param string $key the key to look up
+	 * @return bool
+	 */
+	public function hasAppKey($appName, $key);
+
+	/**
 	 * Looks up an app wide defined value
 	 *
 	 * @param string $appName the appName that we stored the value under
@@ -91,6 +100,30 @@ interface IConfig {
 	 * @return string the saved value
 	 */
 	public function getAppValue($appName, $key, $default = '');
+
+	/**
+	 * Get all app values that are stored
+	 *
+	 * @param string $appName the appName
+	 * @return array with key - value pair as they are saved previously
+	 */
+	public function getAppValuesByApp($appName);
+
+	/**
+	 * Get all app values that use the same key
+	 *
+	 * @param string $key the appName
+	 * @return array with key - value pair as they are saved previously with the
+	 * 	             app name as key
+	 */
+	public function getAppValuesByKey($key);
+
+	/**
+	 * Get all apps that have at least one value saved
+	 *
+	 * @return array containing app names
+	 */
+	public function getApps();
 
 	/**
 	 * Delete an app wide defined value
